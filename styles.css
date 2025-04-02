@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --primary-color: #29335c;
+  --light-primary: #3f4f8d;
+  --lighest-color: #e9ebd5;
+  --secondary-color: #774936;
+  --light-secondary: #c08972;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+header {
+  display: flex;
+  background-color: var(--secondary-color);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  color: var(--lighest-color);
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.movie-name-wrapper {
+  width: 65%;
+  display: flex;
+  align-items: center;
+}
+
+.movie-year-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-options button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  padding: 0.2rem;
+  border: 2px solid var(--lighest-color);
+  border-radius: 10px;
+}
+
+.search-options button:focus,
+.search-options button:hover {
+  background-color: var(--light-primary);
+}
+
+.movie-year-wrapper input {
+  max-width: 5rem;
+}
+
+.movie-name-wrapper input {
+  width: 100%;
+}
+
+.movie-year-wrapper label,
+.movie-name-wrapper label {
+  font-weight: bold;
+}
+
+input {
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  padding: 0.3rem 0.2rem;
+  font-weight: bold;
+}
+
+main {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--lighest-color);
+  flex-grow: 1;
+}
+
+.start-your-list-h2 {
+  padding-top: 1rem;
+}
