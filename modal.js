@@ -17,6 +17,10 @@ function modalConstructor(data) {
 }
 
 function addToListButtonHandler() {
+  if (isMovieDuplicated(currentMovie)) {
+    notie.alert({ text: "Filme já está na sua lista", type: "error" });
+    return;
+  }
   updateUI(currentMovie);
   addToList(currentMovie);
   overlay.classList.remove("visible");

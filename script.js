@@ -56,3 +56,7 @@ function updateUI(movieObject) {
           </button>
         </div>`;
 }
+
+function isMovieDuplicated(movieObject) {
+  return movieArray.some((element) => element.imdbID === movieObject.imdbID);
+}
