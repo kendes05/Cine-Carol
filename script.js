@@ -50,7 +50,7 @@ async function searchButtonClickHandler() {
 function urlGenerator() {
   const movieNameValue = movieNameInput.value.trim().split(" ").join("+");
   const movieYearValue = movieYearInput.value.trim();
-  return `http://www.omdbapi.com/?apikey=${key}&t=${movieNameValue}&y=${movieYearValue}`;
+  return `https://www.omdbapi.com/?apikey=${key}&t=${movieNameValue}&y=${movieYearValue}`;
 }
 
 function addToList(movieObject) {
