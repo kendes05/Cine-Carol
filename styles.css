@@ -10,7 +10,7 @@
   --light-primary: #3f4f8d;
   --lighest-color: #e9ebd5;
   --secondary-color: #774936;
-  --light-secondary: #c08972;
+  --light-secondary: #b97e64;
 }
 
 button {
@@ -101,4 +101,40 @@ main {
 
 .start-your-list-h2 {
   padding-top: 1rem;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.my-movie {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-movie img {
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  max-height: 426px;
+}
+
+.remove-button {
+  cursor: pointer;
+  border: 3px solid var(--secondary-color-color);
+  color: var(--secondary-color);
+  padding: 0.3rem 0;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 1px 1px 10px #000;
+}
+
+.remove-button:hover,
+.remove-button:focus {
+  background-color: var(--secondary-color);
+  color: var(--lighest-color);
 }

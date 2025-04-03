@@ -12,7 +12,8 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/notie/4.3.1/notie.min.css"
+      type="text/css"
+      href="https://unpkg.com/notie/dist/notie.min.css"
     />
   </head>
   <body>
@@ -35,41 +36,32 @@
 
     <main>
       <h2 class="start-your-list-h2">Comece agora sua lista de filmes</h2>
-      <div class="movie-list"></div>
+      <div class="movie-list" id="movie-list"></div>
       <article class="modal-overlay" id="overlay">
         <div class="modal-background" id="background"></div>
         <div class="modal-container">
           <h2 class="movie-title" id="movie-title">Guardians - 2008</h2>
           <div class="modal-body">
-            <img
-              id="movie-poster"
-              src="https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_SX300.jpg"
-              alt=""
-            />
+            <img id="movie-poster" src="" alt="" />
             <div class="movie-info">
-              <h3 class="movie-plot" id="movie-plot">
-                Twilight Cove, a small forgotten town, is besieged by hideous
-                creatures summoned into our dimension. It's only a matter of
-                time before the army of creatures attacks the rest of
-                civilization and wreaks havoc upon the world. At dusk...
-              </h3>
-              <div class="movie-cast" id="movie-cast">
+              <h3 class="movie-plot" id="movie-plot"></h3>
+              <div class="movie-cast">
                 <h4>Atores:</h4>
-                <h5>Chris Bell, Benjamin Budd, Tylan Canady</h5>
+                <h5 id="movie-cast"></h5>
               </div>
-              <div class="movie-genre" id="movie-genre">
+              <div class="movie-genre">
                 <h4>Gênero:</h4>
-                <h5>Horror, Sci-Fi</h5>
+                <h5 id="movie-genre"></h5>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button>Adicionar à lista</button>
+            <button id="add-to-list">Adicionar à lista</button>
           </div>
         </div>
       </article>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/notie/4.3.1/notie.min.js"></script>
+    <script src="https://unpkg.com/notie"></script>
     <script src="key.js"></script>
     <script src="script.js"></script>
     <script src="modal.js"></script>
