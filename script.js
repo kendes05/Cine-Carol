@@ -11,8 +11,21 @@ const movieList = document.getElementById("movie-list");
 
 let movieArray = [];
 
-searchButton.addEventListener("click", searchButtonClickHandler);
+document.addEventListener("DOMContentLoaded", function () {
+  loadMoviesFromLocalStorage();
+});
 
+searchButton.addEventListener("click", searchButtonClickHandler);
+movieNameInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchButtonClickHandler();
+  }
+});
+movieYearInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchButtonClickHandler();
+  }
+});
 async function searchButtonClickHandler() {
   if (movieNameInput.value == "") {
     notie.alert({ text: "Preencha o nome do filme", type: "error" });
@@ -24,7 +37,6 @@ async function searchButtonClickHandler() {
   const response = await fetch(url);
   const data = await response.json();
 
-  console.log(data.Response);
   if (data.Response == "False") {
     notie.alert({ text: "Filme não encontrado", type: "error" });
     return;
@@ -32,7 +44,6 @@ async function searchButtonClickHandler() {
 
   modalConstructor(data);
 
-  console.log(data);
   overlay.classList.add("visible");
 }
 
@@ -44,14 +55,16 @@ function urlGenerator() {
 
 function addToList(movieObject) {
   movieArray.push(movieObject);
+  localStorage.setItem(movieObject.imdbID, JSON.stringify(movieObject));
 }
+
 function updateUI(movieObject) {
-  movieList.innerHTML += `<div class="my-movie">
+  movieList.innerHTML += `<div class="my-movie" id="${movieObject.imdbID}">
           <img
             src="${movieObject.Poster}"
             alt=""
           />
-          <button class="remove-button">
+          <button class="remove-button" onclick="removeMovieConfirmation(this)">
             <i class="bx bx-trash"></i> Remover
           </button>
         </div>`;
@@ -59,4 +72,34 @@ function updateUI(movieObject) {
 
 function isMovieDuplicated(movieObject) {
   return movieArray.some((element) => element.imdbID === movieObject.imdbID);
+}
+
+function removeMovieConfirmation(botao) {
+  notie.confirm(
+    {
+      text: "Você deseja remover o filme da lista?",
+      submitText: "Sim",
+      cancelText: "Não",
+    },
+    () => {
+      removeMovie(botao);
+    }
+  );
+}
+
+function removeMovie(botao) {
+  const movieId = botao.parentElement.id;
+  movieArray = movieArray.filter((movie) => movie.imdbID !== movieId);
+  botao.parentElement.remove();
+  localStorage.removeItem(movieId);
+
+  notie.alert({ text: "Filme removido com sucesso", type: 1 });
+}
+
+function loadMoviesFromLocalStorage() {
+  for (let i = 0; i < localStorage.length; i++) {
+    let movieId = localStorage.key(i);
+    let movieObject = JSON.parse(localStorage.getItem(movieId));
+    updateUI(movieObject);
+  }
 }

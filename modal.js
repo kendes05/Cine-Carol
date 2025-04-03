@@ -23,6 +23,7 @@ function addToListButtonHandler() {
   }
   updateUI(currentMovie);
   addToList(currentMovie);
+  notie.alert({ text: "Filme adicionado com sucesso", type: 1 });
   overlay.classList.remove("visible");
 }
 
