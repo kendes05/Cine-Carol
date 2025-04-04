@@ -1,10 +1,10 @@
 # CineCarol
 
-O **CineCarol** é um gerenciador de filmes criado especialmente para minha namorada, Carolline. Com ele, posso buscar por filmes que desejo assistir e adicioná-los à minha lista. A busca dos filmes é realizada através da API do OMDB, garantindo acesso a informações detalhadas sobre cada título. A pesquisa do título do filme deve ser feita em inglês
+O **CineCarol** é um gerenciador de filmes criado especialmente para minha namorada, Carolline. Com ele, posso buscar por filmes que desejo assistir e adicioná-los à minha lista. A busca dos filmes é realizada através da API do OMDB, garantindo acesso a informações detalhadas sobre cada título. A pesquisa do título do filme deve ser feita em inglês. Esse projeto foi inspirado no projeto Gerenciador de Playlist de Filme do Curso Fullstack Impressionador
 
 ## ✨ Funcionalidades
 
-- 🎥 **Buscar filmes** pelo título através da API OMDB
+- 🎥 **Buscar filmes** pelo título e pelo ano através da API OMDB
 - ➕ **Adicionar filmes** à lista pessoal
 - ❌ **Remover filmes** da lista
 - 📊 **Persistência de dados** com `localStorage`, garantindo que os filmes permaneçam na lista mesmo ao recarregar a página
