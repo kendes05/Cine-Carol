@@ -54,7 +54,7 @@
 .modal-body img {
   border-radius: 10px;
   margin-right: 20px;
-  height: 50%;
+  height: 100%;
   width: 50%;
 }
 
@@ -67,6 +67,12 @@
 
 h5 {
   font-weight: 300;
+}
+
+h3,
+h4,
+h5 {
+  text-align: justify;
 }
 
 .modal-footer button {
