@@ -8,8 +8,16 @@ const moviePlot = document.getElementById("movie-plot");
 const movieCast = document.getElementById("movie-cast");
 const movieGenre = document.getElementById("movie-genre");
 const movieList = document.getElementById("movie-list");
+const h2Start = document.getElementById("h2-start");
 
 let movieArray = [];
+
+function verifyArrayLength() {
+  h2Start.textContent =
+    movieArray.length === 0
+      ? "Comece sua lista de filmes agora!"
+      : "Filme(s) maneiro(s)!";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   loadMoviesFromLocalStorage();
@@ -56,6 +64,7 @@ function urlGenerator() {
 function addToList(movieObject) {
   movieArray.push(movieObject);
   localStorage.setItem(movieObject.imdbID, JSON.stringify(movieObject));
+  verifyArrayLength();
 }
 
 function updateUI(movieObject) {
@@ -92,6 +101,7 @@ function removeMovie(botao) {
   movieArray = movieArray.filter((movie) => movie.imdbID !== movieId);
   botao.parentElement.remove();
   localStorage.removeItem(movieId);
+  verifyArrayLength();
 
   notie.alert({ text: "Filme removido com sucesso", type: 1 });
 }
@@ -100,6 +110,8 @@ function loadMoviesFromLocalStorage() {
   for (let i = 0; i < localStorage.length; i++) {
     let movieId = localStorage.key(i);
     let movieObject = JSON.parse(localStorage.getItem(movieId));
+    movieArray.push(movieObject);
+    verifyArrayLength();
     updateUI(movieObject);
   }
 }
