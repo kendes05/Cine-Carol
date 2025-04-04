@@ -17,6 +17,12 @@ h1 {
 .modal-footer button {
   font-size: 0.7rem;
 }
+.modal-container {
+  min-width: 80%;
+}
+.movie-info {
+  font-size: 0.8rem;
+}
 label {
   font-size: 0.8rem;
 }

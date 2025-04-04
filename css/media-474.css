@@ -37,12 +37,16 @@ h1 {
 label {
   font-size: 0.5rem;
 }
+.modal-body img {
+  width: 60%;
+}
 .movie-title {
   font-size: 0.8rem;
 }
 .modal-container {
   padding: 10px;
+  min-width: 80%;
 }
 .movie-info {
-  font-size: 0.4rem;
+  font-size: 0.6rem;
 }
