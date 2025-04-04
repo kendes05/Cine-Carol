@@ -54,6 +54,8 @@
 .modal-body img {
   border-radius: 10px;
   margin-right: 20px;
+  height: 50%;
+  width: 50%;
 }
 
 .movie-info {
@@ -61,6 +63,10 @@
   flex-direction: column;
   justify-content: space-around;
   max-width: 300px;
+}
+
+h5 {
+  font-weight: 300;
 }
 
 .modal-footer button {

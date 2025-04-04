@@ -1,0 +1,16 @@
+.start-your-list-h2 {
+  font-size: 1.2rem;
+}
+
+.my-movie img {
+  max-height: 300px;
+}
+
+.modal-body img {
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.movie-info {
+  font-size: 0.8rem;
+}
